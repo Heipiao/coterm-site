@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Privacy Policy - CoTerm</title>
+  <meta name="description" content="CoTerm Privacy Policy - Learn how we collect, use, and protect your personal information.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Privacy Policy - CoTerm">
+  <meta property="og:description" content="CoTerm Privacy Policy">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://coterm.app/privacy">
+  <meta property="og:image" content="logo.png">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="canonical" href="https://coterm.app/privacy">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --text: #000000;
+      --text-secondary: #666666;
+      --text-tertiary: #999999;
+      --line: #e5e5e5;
+      --line-light: #f2f2f7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* Main Content */
+    .main {
+      padding: 120px 24px 60px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .updated-date {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 32px 0 12px;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 24px 0 10px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      padding-left: 24px;
+      margin: 12px 0;
+    }
+
+    li {
+      margin: 8px 0;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: var(--text-secondary);
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 32px 24px;
+      border-top: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      color: var(--text-tertiary);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="CoTerm Logo">
+        <span>CoTerm</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html" style="color: var(--text);">Privacy</a>
+        <a href="support.html">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <a href="index.html" class="back-link">
+      ← Back to Home
+    </a>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated-date">Last updated: March 22, 2026</p>
+
+    <div class="section">
+      <h2>Introduction</h2>
+      <p>Welcome to CoTerm ("we" or "the App"). We understand the importance of personal information to you and will do our best to protect your personal information securely. This Privacy Policy explains how we collect, use, store, and protect your personal information.</p>
+    </div>
+
+    <div class="section">
+      <h2>Information We Collect</h2>
+      <p>We only collect information necessary to provide our services:</p>
+      <ul>
+        <li><strong>Device Identifier</strong> - Used to identify your device and sync subscription status</li>
+        <li><strong>Usage Data</strong> - Anonymous statistics to help us improve product experience</li>
+        <li><strong>Crash Reports</strong> - Used to identify and fix technical issues</li>
+        <li><strong>Subscription Information</strong> - Purchase records handled through Apple App Store</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Terminal Content Privacy</h2>
+      <p>Your terminal session content (including commands, output, file content, etc.) is only used to interact with AI models to complete tasks. We commit:</p>
+      <ul>
+        <li>Will not store your terminal content on our servers</li>
+        <li>Will not use your code or data to train AI models</li>
+        <li>Will not sell or share your terminal content with third parties</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Third-Party Services</h2>
+      <p>To enable core features, we use the following third-party services:</p>
+      <ul>
+        <li><strong>Anthropic API</strong> - Provides Claude AI model services, subject to Anthropic's Privacy Policy</li>
+        <li><strong>OpenAI API</strong> - Optional AI model service, subject to OpenAI's Privacy Policy</li>
+        <li><strong>Apple App Store</strong> - Handles in-app purchases and subscriptions, subject to Apple's Privacy Policy</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Data Security</h2>
+      <p>We use industry-standard security measures to protect your data:</p>
+      <ul>
+        <li>Transport layer encryption (HTTPS/TLS)</li>
+        <li>Encrypted local data storage</li>
+        <li>Regular security audits and updates</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Your Rights</h2>
+      <p>Under applicable data protection regulations, you have the following rights:</p>
+      <ul>
+        <li>Right to access your personal information</li>
+        <li>Right to correct inaccurate information</li>
+        <li>Right to delete personal information</li>
+        <li>Right to withdraw consent</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Children's Privacy</h2>
+      <p>Our services are not directed to children under 13. We do not knowingly collect personal information from children. If we discover that we have collected personal information from a child, we will delete it immediately.</p>
+    </div>
+
+    <div class="section">
+      <h2>Changes to Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Updated policies will be posted in the App, and we will notify you of material changes through the App.</p>
+    </div>
+
+    <div class="section">
+      <h2>Contact Us</h2>
+      <p>For privacy-related questions or data rights requests, please contact us at:</p>
+      <p>Email: lsl8315@gmail.com</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        © 2026 CoTerm. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="https://github.com/Heipiao/coterm-site">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

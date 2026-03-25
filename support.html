@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Support - CoTerm</title>
+  <meta name="description" content="CoTerm Technical Support - Get help with installation, configuration, and usage.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Support - CoTerm">
+  <meta property="og:description" content="CoTerm Technical Support">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://coterm.app/support">
+  <meta property="og:image" content="logo.png">
+
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="canonical" href="https://coterm.app/support">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #ffffff;
+      --text: #000000;
+      --text-secondary: #666666;
+      --text-tertiary: #999999;
+      --line: #e5e5e5;
+      --line-light: #f2f2f7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "PingFang SC", "Helvetica Neue", sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 32px;
+      width: auto;
+      border-radius: 6px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* Main Content */
+    .main {
+      padding: 120px 24px 60px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 32px 0 12px;
+    }
+
+    h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin: 24px 0 10px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 15px;
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      padding-left: 24px;
+      margin: 12px 0;
+    }
+
+    li {
+      margin: 8px 0;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: var(--text-secondary);
+    }
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-bottom: 24px;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 32px 24px;
+      border-top: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-copy {
+      color: var(--text-tertiary);
+      font-size: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.png" alt="CoTerm Logo">
+        <span>CoTerm</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html" style="color: var(--text);">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main">
+    <a href="index.html" class="back-link">
+      ← Back to Home
+    </a>
+
+    <h1>Technical Support</h1>
+
+    <div class="section">
+      <h2>Contact</h2>
+      <p>For technical issues or assistance, please contact us through the following channels:</p>
+      <ul>
+        <li>Email: lsl8315@gmail.com</li>
+        <li>GitHub Issues: <a href="https://github.com/Heipiao/coterm-site/issues">github.com/Heipiao/coterm-site/issues</a></li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>FAQ</h2>
+
+      <h3>How to get started?</h3>
+      <p>Download and install the CoTerm app, then follow the in-app instructions to complete the setup. You'll need an AI service API Key (such as Anthropic, OpenAI).</p>
+
+      <h3>Which platforms are supported?</h3>
+      <p>CoTerm supports iOS, macOS, Windows, and Linux platforms. Mobile and desktop can be used synchronously.</p>
+
+      <h3>Do I need an API key?</h3>
+      <p>Yes, you need to configure your own AI service API Key to use AI features. We support multiple providers including Anthropic (Claude), OpenAI (GPT-4), etc.</p>
+
+      <h3>What does Pro subscription include?</h3>
+      <p>Pro subscription provides unlimited AI sessions, unlimited Agent execution time, multi-session workspace management and other advanced features. Subscriptions are available through the App Store with monthly or annual billing.</p>
+    </div>
+
+    <div class="section">
+      <h2>Documentation</h2>
+      <p>For more usage guides and technical documentation, please visit our <a href="https://github.com/Heipiao/coterm-site">GitHub repository</a>.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        © 2026 CoTerm. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="https://github.com/Heipiao/coterm-site">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
