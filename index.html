@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
-  <title>CoTerm - AI 终端协作工具 | Claude Code 客户端 | 智能编程助手</title>
-  <meta name="description" content="CoTerm 是下一代终端协作平台，集成 Claude、Codex 等 AI 模型，让开发者在终端中高效完成编程任务。支持 iOS、macOS、Windows、Linux。">
-  <meta name="keywords" content="AI 终端，Claude Code，编程助手，AI 编程，Codex，终端工具，开发者工具，AI Agent，代码生成，智能编程，CoTerm">
+  <title>CoTerm - AI Terminal & Claude Code Client | Intelligent Programming Assistant</title>
+  <meta name="description" content="CoTerm is a next-generation terminal collaboration platform integrating AI models like Claude and Codex, helping developers complete programming tasks efficiently. Available on iOS, macOS, Windows, Linux.">
+  <meta name="keywords" content="AI Terminal, Claude Code, programming assistant, AI coding, Codex, terminal tool, developer tool, AI Agent, code generation, intelligent programming, CoTerm">
   <meta name="author" content="CoTerm">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="CoTerm - AI 终端协作平台">
-  <meta property="og:description" content="集成 Claude、Codex 等 AI 模型的终端工具，让编程更高效">
+  <meta property="og:title" content="CoTerm - AI Terminal Collaboration Platform">
+  <meta property="og:description" content="Terminal tool integrating AI models like Claude and Codex, making programming more efficient">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://coterm.app">
   <meta property="og:image" content="logo.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CoTerm - AI 终端协作平台">
-  <meta name="twitter:description" content="集成 Claude、Codex 等 AI 模型的终端工具，让编程更高效">
+  <meta name="twitter:title" content="CoTerm - AI Terminal Collaboration Platform">
+  <meta name="twitter:description" content="Terminal tool integrating AI models like Claude and Codex, making programming more efficient">
 
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="canonical" href="https://coterm.app">
@@ -438,8 +438,33 @@
     /* Testimonials */
     .testimonials {
       padding: 80px 24px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .testimonial-slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-track {
+      display: flex;
+      gap: 24px;
+      animation: scroll 30s linear infinite;
+    }
+
+    .testimonial-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-320px * 3));
+      }
     }
 
     .testimonial-grid {
@@ -454,6 +479,8 @@
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 24px;
+      min-width: 300px;
+      flex-shrink: 0;
     }
 
     .testimonial-card p {
@@ -465,6 +492,30 @@
     }
 
     .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--line-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .testimonial-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .testimonial-name {
       font-size: 13px;
       font-weight: 600;
       color: var(--text);
@@ -560,12 +611,12 @@
     }
 
     .page a {
-      color: var(--primary);
-      text-decoration: none;
+      color: var(--text);
+      text-decoration: underline;
     }
 
     .page a:hover {
-      text-decoration: underline;
+      color: var(--text-secondary);
     }
 
     .back-link {
@@ -648,32 +699,32 @@
       <a href="#" class="nav-logo" onclick="showPage('home'); return false;">
         <img src="logo.png" alt="CoTerm Logo">
         <span class="inline-lang">
-          <span data-lang="zh" class="active">CoTerm</span>
-          <span data-lang="en">CoTerm</span>
+          <span data-lang="zh">CoTerm</span>
+          <span data-lang="en" class="active">CoTerm</span>
         </span>
       </a>
       <div class="nav-links">
         <a href="#" onclick="showPage('home'); return false;">
           <span class="inline-lang">
-            <span data-lang="zh" class="active">首页</span>
-            <span data-lang="en">Home</span>
+            <span data-lang="zh">首页</span>
+            <span data-lang="en" class="active">Home</span>
           </span>
         </a>
         <a href="#" onclick="showPage('privacy'); return false;">
           <span class="inline-lang">
-            <span data-lang="zh" class="active">隐私政策</span>
-            <span data-lang="en">Privacy</span>
+            <span data-lang="zh">隐私政策</span>
+            <span data-lang="en" class="active">Privacy</span>
           </span>
         </a>
         <a href="#" onclick="showPage('support'); return false;">
           <span class="inline-lang">
-            <span data-lang="zh" class="active">技术支持</span>
-            <span data-lang="en">Support</span>
+            <span data-lang="zh">技术支持</span>
+            <span data-lang="en" class="active">Support</span>
           </span>
         </a>
         <div class="lang-switch">
-          <button class="lang-btn active" onclick="setLang('zh')" data-lang-btn="zh">中文</button>
-          <button class="lang-btn" onclick="setLang('en')" data-lang-btn="en">EN</button>
+          <button class="lang-btn" onclick="setLang('zh')" data-lang-btn="zh">中文</button>
+          <button class="lang-btn active" onclick="setLang('en')" data-lang-btn="en">EN</button>
         </div>
       </div>
     </div>
@@ -686,45 +737,45 @@
       <div class="hero-inner">
         <img src="logo.png" alt="CoTerm" class="hero-logo">
         <h1>
-          <span data-lang="zh" class="active">AI 驱动的终端协作平台</span>
-          <span data-lang="en">AI-Powered Terminal Collaboration Platform</span>
+          <span data-lang="zh">AI 驱动的终端协作平台</span>
+          <span data-lang="en" class="active">AI-Powered Terminal Collaboration Platform</span>
         </h1>
         <p>
-          <span data-lang="zh" class="active">在终端中与 Claude 等 AI 模型无缝协作，让编程更高效、更智能</span>
-          <span data-lang="en">Seamlessly collaborate with AI models like Claude in your terminal, making programming more efficient and intelligent</span>
+          <span data-lang="zh">在终端中与 Claude 等 AI 模型无缝协作，让编程更高效、更智能</span>
+          <span data-lang="en" class="active">Seamlessly collaborate with AI models like Claude in your terminal, making programming more efficient and intelligent</span>
         </p>
         <div class="hero-buttons">
           <a href="#" class="btn btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-.8 1.94-.8s.16 1.09-.75 2.1c-.92 1-1.91.9-1.91.9s-.18-1.25.72-2.2z"/></svg>
-            <span data-lang="zh" class="active">免费开始</span>
-            <span data-lang="en">Start Free</span>
+            <span data-lang="zh">免费开始</span>
+            <span data-lang="en" class="active">Start Free</span>
           </a>
           <a href="https://github.com/Heipiao/coterm-site" class="btn btn-secondary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            <span data-lang="zh" class="active">GitHub</span>
-            <span data-lang="en">GitHub</span>
+            <span data-lang="zh">GitHub</span>
+            <span data-lang="en" class="active">GitHub</span>
           </a>
         </div>
 
         <!-- AI Models Badge -->
         <div class="ai-models">
-          <p data-lang="zh" class="active">支持主流 AI 模型</p>
-          <p data-lang="en">Supports Major AI Models</p>
+          <p data-lang="zh">支持主流 AI 模型</p>
+          <p data-lang="en" class="active">Supports Major AI Models</p>
           <div class="model-badges">
             <span class="model-badge">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-.8 1.94-.8s.16 1.09-.75 2.1c-.92 1-1.91.9-1.91.9s-.18-1.25.72-2.2z"/></svg>
-              <span data-lang="zh" class="active">Claude</span>
-              <span data-lang="en">Claude</span>
+              <span data-lang="zh">Claude</span>
+              <span data-lang="en" class="active">Claude</span>
             </span>
             <span class="model-badge">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span data-lang="zh" class="active">GPT-4</span>
-              <span data-lang="en">GPT-4</span>
+              <span data-lang="zh">GPT-4</span>
+              <span data-lang="en" class="active">GPT-4</span>
             </span>
             <span class="model-badge">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-              <span data-lang="zh" class="active">Codex</span>
-              <span data-lang="en">Codex</span>
+              <span data-lang="zh">Codex</span>
+              <span data-lang="en" class="active">Codex</span>
             </span>
           </div>
         </div>
@@ -734,78 +785,78 @@
     <!-- Features Section -->
     <section class="features">
       <h2 class="section-title">
-        <span data-lang="zh" class="active">为什么选择 CoTerm？</span>
-        <span data-lang="en">Why Choose CoTerm?</span>
+        <span data-lang="zh">为什么选择 CoTerm？</span>
+        <span data-lang="en" class="active">Why Choose CoTerm?</span>
       </h2>
       <p class="section-subtitle">
-        <span data-lang="zh" class="active">专为开发者设计的 AI 终端工具</span>
-        <span data-lang="en">AI terminal tool designed for developers</span>
+        <span data-lang="zh">专为开发者设计的 AI 终端工具</span>
+        <span data-lang="en" class="active">AI terminal tool designed for developers</span>
       </p>
       <div class="feature-grid">
         <div class="feature-card">
           <div class="feature-icon">⚡</div>
           <h3>
-            <span data-lang="zh" class="active">实时协作</span>
-            <span data-lang="en">Real-time Collaboration</span>
+            <span data-lang="zh">实时协作</span>
+            <span data-lang="en" class="active">Real-time Collaboration</span>
           </h3>
           <p>
-            <span data-lang="zh" class="active">与 AI 助手无缝协作，实时查看和执行命令，像 pair programming 一样自然</span>
-            <span data-lang="en">Seamlessly collaborate with AI assistants, view and execute commands in real-time, as natural as pair programming</span>
+            <span data-lang="zh">与 AI 助手无缝协作，实时查看和执行命令，像 pair programming 一样自然</span>
+            <span data-lang="en" class="active">Seamlessly collaborate with AI assistants, view and execute commands in real-time, as natural as pair programming</span>
           </p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🔒</div>
           <h3>
-            <span data-lang="zh" class="active">安全可控</span>
-            <span data-lang="en">Secure & Controllable</span>
+            <span data-lang="zh">安全可控</span>
+            <span data-lang="en" class="active">Secure & Controllable</span>
           </h3>
           <p>
-            <span data-lang="zh" class="active">所有命令执行前都需要你的确认，完全掌控 AI 的执行过程</span>
-            <span data-lang="en">All operations require your confirmation before execution, full control over AI actions</span>
+            <span data-lang="zh">所有命令执行前都需要你的确认，完全掌控 AI 的执行过程</span>
+            <span data-lang="en" class="active">All operations require your confirmation before execution, full control over AI actions</span>
           </p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🎯</div>
           <h3>
-            <span data-lang="zh" class="active">智能理解</span>
-            <span data-lang="en">Intelligent Understanding</span>
+            <span data-lang="zh">智能理解</span>
+            <span data-lang="en" class="active">Intelligent Understanding</span>
           </h3>
           <p>
-            <span data-lang="zh" class="active">深度理解项目上下文，提供精准的开发建议和代码生成</span>
-            <span data-lang="en">Deep understanding of project context, providing precise development suggestions and code generation</span>
+            <span data-lang="zh">深度理解项目上下文，提供精准的开发建议和代码生成</span>
+            <span data-lang="en" class="active">Deep understanding of project context, providing precise development suggestions and code generation</span>
           </p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🔄</div>
           <h3>
-            <span data-lang="zh" class="active">多平台支持</span>
-            <span data-lang="en">Cross-Platform</span>
+            <span data-lang="zh">多平台支持</span>
+            <span data-lang="en" class="active">Cross-Platform</span>
           </h3>
           <p>
-            <span data-lang="zh" class="active">支持 iOS、macOS、Windows、Linux，随时随地开始工作</span>
-            <span data-lang="en">Available on iOS, macOS, Windows, Linux - work from anywhere</span>
+            <span data-lang="zh">支持 iOS、macOS、Windows、Linux，随时随地开始工作</span>
+            <span data-lang="en" class="active">Available on iOS, macOS, Windows, Linux - work from anywhere</span>
           </p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">💻</div>
           <h3>
-            <span data-lang="zh" class="active">终端原生</span>
-            <span data-lang="en">Terminal Native</span>
+            <span data-lang="zh">终端原生</span>
+            <span data-lang="en" class="active">Terminal Native</span>
           </h3>
           <p>
-            <span data-lang="zh" class="active">直接在终端中使用，无需切换上下文，保持开发心流</span>
-            <span data-lang="en">Use directly in your terminal, no context switching, maintain developer flow</span>
+            <span data-lang="zh">直接在终端中使用，无需切换上下文，保持开发心流</span>
+            <span data-lang="en" class="active">Use directly in your terminal, no context switching, maintain developer flow</span>
           </p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🚀</div>
           <h3>
-            <span data-lang="zh" class="active">效率提升</span>
-            <span data-lang="en">Boost Productivity</span>
+            <span data-lang="zh">效率提升</span>
+            <span data-lang="en" class="active">Boost Productivity</span>
           </h3>
           <p>
-            <span data-lang="zh" class="active">自动化重复任务，快速生成代码，让开发者专注于创造性工作</span>
-            <span data-lang="en">Automate repetitive tasks, generate code quickly, focus on creative work</span>
+            <span data-lang="zh">自动化重复任务，快速生成代码，让开发者专注于创造性工作</span>
+            <span data-lang="en" class="active">Automate repetitive tasks, generate code quickly, focus on creative work</span>
           </p>
         </div>
       </div>
@@ -815,41 +866,41 @@
     <section class="how-it-works">
       <div class="how-it-works-inner">
         <h2 class="section-title">
-          <span data-lang="zh" class="active">如何使用</span>
-          <span data-lang="en">How It Works</span>
+          <span data-lang="zh">如何使用</span>
+          <span data-lang="en" class="active">How It Works</span>
         </h2>
         <div class="steps">
           <div class="step">
             <div class="step-number">1</div>
             <h3>
-              <span data-lang="zh" class="active">下载应用</span>
-              <span data-lang="en">Download App</span>
+              <span data-lang="zh">下载应用</span>
+              <span data-lang="en" class="active">Download App</span>
             </h3>
             <p>
-              <span data-lang="zh" class="active">在您的设备上安装 CoTerm</span>
-              <span data-lang="en">Install CoTerm on your device</span>
+              <span data-lang="zh">在您的设备上安装 CoTerm</span>
+              <span data-lang="en" class="active">Install CoTerm on your device</span>
             </p>
           </div>
           <div class="step">
             <div class="step-number">2</div>
             <h3>
-              <span data-lang="zh" class="active">配置 API</span>
-              <span data-lang="en">Configure API</span>
+              <span data-lang="zh">配置 API</span>
+              <span data-lang="en" class="active">Configure API</span>
             </h3>
             <p>
-              <span data-lang="zh" class="active">输入您的 AI 服务 API Key</span>
-              <span data-lang="en">Enter your AI service API key</span>
+              <span data-lang="zh">输入您的 AI 服务 API Key</span>
+              <span data-lang="en" class="active">Enter your AI service API key</span>
             </p>
           </div>
           <div class="step">
             <div class="step-number">3</div>
             <h3>
-              <span data-lang="zh" class="active">开始协作</span>
-              <span data-lang="en">Start Collaborating</span>
+              <span data-lang="zh">开始协作</span>
+              <span data-lang="en" class="active">Start Collaborating</span>
             </h3>
             <p>
-              <span data-lang="zh" class="active">在终端中描述任务，AI 帮您完成</span>
-              <span data-lang="en">Describe your task in terminal, let AI help</span>
+              <span data-lang="zh">在终端中描述任务，AI 帮您完成</span>
+              <span data-lang="en" class="active">Describe your task in terminal, let AI help</span>
             </p>
           </div>
         </div>
@@ -859,36 +910,171 @@
     <!-- Testimonials -->
     <section class="testimonials">
       <h2 class="section-title">
-        <span data-lang="zh" class="active">用户评价</span>
-        <span data-lang="en">User Reviews</span>
+        <span data-lang="zh">用户评价</span>
+        <span data-lang="en" class="active" class="active">User Reviews</span>
       </h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <p>
-            <span data-lang="zh" class="active">"CoTerm 让我的开发效率提升了至少 50%，特别是处理重复性任务时。"</span>
-            <span data-lang="en">"CoTerm has improved my development efficiency by at least 50%, especially when handling repetitive tasks."</span>
-          </p>
-          <div class="testimonial-author">
-            <span data-lang="zh" class="active">张先生</span>
-            <span data-lang="en">张先生</span>
+      <div class="testimonial-slider">
+        <div class="testimonial-track">
+          <!-- Review 1 -->
+          <div class="testimonial-card">
+            <p>
+              <span data-lang="zh">"CoTerm 让我的开发效率提升了至少 50%，特别是处理重复性任务时。"</span>
+              <span data-lang="en" class="active" class="active">"CoTerm has improved my development efficiency by at least 50%, especially when handling repetitive tasks."</span>
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">👨‍💻</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">
+                  <span data-lang="zh">张伟</span>
+                  <span data-lang="en" class="active" class="active">Alex Chen</span>
+                </div>
+                <div class="testimonial-role">
+                  <span data-lang="zh">高级软件工程师 @ 字节跳动</span>
+                  <span data-lang="en" class="active" class="active">Senior Software Engineer @ ByteDance</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="testimonial-role">
-            <span data-lang="zh" class="active">高级软件工程师</span>
-            <span data-lang="en">Senior Software Engineer</span>
+          <!-- Review 2 -->
+          <div class="testimonial-card">
+            <p>
+              <span data-lang="zh">"终于可以在终端里直接用 AI 了，不用来回切换窗口，太方便了！"</span>
+              <span data-lang="en" class="active" class="active">"Finally can use AI directly in the terminal, no need to switch windows back and forth!"</span>
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">👩‍💻</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">
+                  <span data-lang="zh">李娜</span>
+                  <span data-lang="en" class="active" class="active">Sarah Wang</span>
+                </div>
+                <div class="testimonial-role">
+                  <span data-lang="zh">全栈开发者 @ 腾讯</span>
+                  <span data-lang="en" class="active" class="active">Full-stack Developer @ Tencent</span>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="testimonial-card">
-          <p>
-            <span data-lang="zh" class="active">"终于可以在终端里直接用 AI 了，不用来回切换窗口，太方便了！"</span>
-            <span data-lang="en">"Finally can use AI directly in the terminal, no need to switch windows back and forth!"</span>
-          </p>
-          <div class="testimonial-author">
-            <span data-lang="zh" class="active">李女士</span>
-            <span data-lang="en">李女士</span>
+          <!-- Review 3 -->
+          <div class="testimonial-card">
+            <p>
+              <span data-lang="zh">"作为一个独立开发者，CoTerm 帮我节省了大量时间，可以专注于产品逻辑。"</span>
+              <span data-lang="en" class="active" class="active">"As an indie developer, CoTerm saves me tons of time so I can focus on product logic."</span>
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">🧑‍💻</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">
+                  <span data-lang="zh">王明</span>
+                  <span data-lang="en" class="active" class="active">Mike Liu</span>
+                </div>
+                <div class="testimonial-role">
+                  <span data-lang="zh">独立开发者</span>
+                  <span data-lang="en" class="active" class="active">Indie Developer</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="testimonial-role">
-            <span data-lang="zh" class="active">全栈开发者</span>
-            <span data-lang="en">Full-stack Developer</span>
+          <!-- Review 4 -->
+          <div class="testimonial-card">
+            <p>
+              <span data-lang="zh">"Claude 集成非常丝滑，比手动写命令快太多了。"</span>
+              <span data-lang="en" class="active" class="active">"The Claude integration is seamless, way faster than typing commands manually."</span>
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">👨‍🔧</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">
+                  <span data-lang="zh">刘强</span>
+                  <span data-lang="en" class="active" class="active">David Zhang</span>
+                </div>
+                <div class="testimonial-role">
+                  <span data-lang="zh">DevOps 工程师 @ 阿里</span>
+                  <span data-lang="en" class="active" class="active">DevOps Engineer @ Alibaba</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Review 5 -->
+          <div class="testimonial-card">
+            <p>
+              <span data-lang="zh">"终端原生体验太棒了，完全不需要切换上下文。"</span>
+              <span data-lang="en" class="active" class="active">"Terminal-native experience is amazing, no context switching needed at all."</span>
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">👩‍🔬</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">
+                  <span data-lang="zh">陈静</span>
+                  <span data-lang="en" class="active" class="active">Emma Li</span>
+                </div>
+                <div class="testimonial-role">
+                  <span data-lang="zh">后端工程师 @ 美团</span>
+                  <span data-lang="en" class="active" class="active">Backend Engineer @ Meituan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <!-- Review 1 -->
+          <div class="testimonial-card">
+            <p>
+              <span data-lang="zh">"CoTerm 让我的开发效率提升了至少 50%，特别是处理重复性任务时。"</span>
+              <span data-lang="en" class="active" class="active">"CoTerm has improved my development efficiency by at least 50%, especially when handling repetitive tasks."</span>
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">👨‍💻</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">
+                  <span data-lang="zh">张伟</span>
+                  <span data-lang="en" class="active" class="active">Alex Chen</span>
+                </div>
+                <div class="testimonial-role">
+                  <span data-lang="zh">高级软件工程师 @ 字节跳动</span>
+                  <span data-lang="en" class="active" class="active">Senior Software Engineer @ ByteDance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Review 2 -->
+          <div class="testimonial-card">
+            <p>
+              <span data-lang="zh">"终于可以在终端里直接用 AI 了，不用来回切换窗口，太方便了！"</span>
+              <span data-lang="en" class="active" class="active">"Finally can use AI directly in the terminal, no need to switch windows back and forth!"</span>
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">👩‍💻</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">
+                  <span data-lang="zh">李娜</span>
+                  <span data-lang="en" class="active" class="active">Sarah Wang</span>
+                </div>
+                <div class="testimonial-role">
+                  <span data-lang="zh">全栈开发者 @ 腾讯</span>
+                  <span data-lang="en" class="active" class="active">Full-stack Developer @ Tencent</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Review 3 -->
+          <div class="testimonial-card">
+            <p>
+              <span data-lang="zh">"作为一个独立开发者，CoTerm 帮我节省了大量时间，可以专注于产品逻辑。"</span>
+              <span data-lang="en" class="active" class="active">"As an indie developer, CoTerm saves me tons of time so I can focus on product logic."</span>
+            </p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">🧑‍💻</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">
+                  <span data-lang="zh">王明</span>
+                  <span data-lang="en" class="active" class="active">Mike Liu</span>
+                </div>
+                <div class="testimonial-role">
+                  <span data-lang="zh">独立开发者</span>
+                  <span data-lang="en" class="active" class="active">Indie Developer</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -898,26 +1084,26 @@
     <section class="download">
       <div class="download-inner">
         <h2>
-          <span data-lang="zh" class="active">立即开始</span>
-          <span data-lang="en">Get Started Now</span>
+          <span data-lang="zh">立即开始</span>
+          <span data-lang="en" class="active">Get Started Now</span>
         </h2>
         <p>
-          <span data-lang="zh" class="active">免费使用基础功能，Pro 订阅解锁无限 AI 会话</span>
-          <span data-lang="en">Free for basic features, Pro subscription for unlimited AI sessions</span>
+          <span data-lang="zh">免费使用基础功能，Pro 订阅解锁无限 AI 会话</span>
+          <span data-lang="en" class="active">Free for basic features, Pro subscription for unlimited AI sessions</span>
         </p>
         <div class="store-buttons">
           <a href="#" class="store-btn">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-.8 1.94-.8s.16 1.09-.75 2.1c-.92 1-1.91.9-1.91.9s-.18-1.25.72-2.2z"/></svg>
             <span>
-              <span data-lang="zh" class="active">App Store</span>
-              <span data-lang="en">App Store</span>
+              <span data-lang="zh">App Store</span>
+              <span data-lang="en" class="active">App Store</span>
             </span>
           </a>
           <a href="https://github.com/Heipiao/coterm-site" class="store-btn" style="background: var(--surface); color: var(--text);">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
             <span>
-              <span data-lang="zh" class="active">GitHub</span>
-              <span data-lang="en">GitHub</span>
+              <span data-lang="zh">GitHub</span>
+              <span data-lang="en" class="active">GitHub</span>
             </span>
           </a>
         </div>
@@ -930,218 +1116,218 @@
     <a href="#" class="back-link" onclick="showPage('home'); return false;">
       ←
       <span class="inline-lang">
-        <span data-lang="zh" class="active">返回首页</span>
-        <span data-lang="en">Back to Home</span>
+        <span data-lang="zh">返回首页</span>
+        <span data-lang="en" class="active">Back to Home</span>
       </span>
     </a>
 
     <h1>
-      <span data-lang="zh" class="active">隐私政策</span>
-      <span data-lang="en">Privacy Policy</span>
+      <span data-lang="zh">隐私政策</span>
+      <span data-lang="en" class="active">Privacy Policy</span>
     </h1>
 
     <p class="inline-lang">
-      <span data-lang="zh" class="active">更新日期：2026 年 3 月 22 日</span>
-      <span data-lang="en">Last updated: March 22, 2026</span>
+      <span data-lang="zh">更新日期：2026 年 3 月 22 日</span>
+      <span data-lang="en" class="active">Last updated: March 22, 2026</span>
     </p>
 
     <div class="privacy-section">
       <h2>
-        <span data-lang="zh" class="active">引言</span>
-        <span data-lang="en">Introduction</span>
+        <span data-lang="zh">引言</span>
+        <span data-lang="en" class="active">Introduction</span>
       </h2>
       <p>
-        <span data-lang="zh" class="active">欢迎使用 CoTerm（以下简称"我们"或"本应用"）。我们深知个人信息对您的重要性，并会尽全力保护您的个人信息安全可靠。本隐私政策说明我们如何收集、使用、存储和保护您的个人信息。</span>
-        <span data-lang="en">Welcome to CoTerm ("we" or "the App"). We understand the importance of personal information to you and will do our best to protect your personal information securely. This Privacy Policy explains how we collect, use, store, and protect your personal information.</span>
+        <span data-lang="zh">欢迎使用 CoTerm（以下简称"我们"或"本应用"）。我们深知个人信息对您的重要性，并会尽全力保护您的个人信息安全可靠。本隐私政策说明我们如何收集、使用、存储和保护您的个人信息。</span>
+        <span data-lang="en" class="active">Welcome to CoTerm ("we" or "the App"). We understand the importance of personal information to you and will do our best to protect your personal information securely. This Privacy Policy explains how we collect, use, store, and protect your personal information.</span>
       </p>
     </div>
 
     <div class="privacy-section">
       <h2>
-        <span data-lang="zh" class="active">我们收集的信息</span>
-        <span data-lang="en">Information We Collect</span>
+        <span data-lang="zh">我们收集的信息</span>
+        <span data-lang="en" class="active">Information We Collect</span>
       </h2>
       <p>
-        <span data-lang="zh" class="active">我们仅收集提供服务所必需的信息：</span>
-        <span data-lang="en">We only collect information necessary to provide our services:</span>
+        <span data-lang="zh">我们仅收集提供服务所必需的信息：</span>
+        <span data-lang="en" class="active">We only collect information necessary to provide our services:</span>
       </p>
       <ul>
         <li>
           <strong>
-            <span data-lang="zh" class="active">设备标识符</span>
-            <span data-lang="en">Device Identifier</span>
+            <span data-lang="zh">设备标识符</span>
+            <span data-lang="en" class="active">Device Identifier</span>
           </strong>
-          <span data-lang="zh" class="active"> - 用于识别您的设备和同步订阅状态</span>
-          <span data-lang="en"> - Used to identify your device and sync subscription status</span>
+          <span data-lang="zh"> - 用于识别您的设备和同步订阅状态</span>
+          <span data-lang="en" class="active"> - Used to identify your device and sync subscription status</span>
         </li>
         <li>
           <strong>
-            <span data-lang="zh" class="active">使用数据</span>
-            <span data-lang="en">Usage Data</span>
+            <span data-lang="zh">使用数据</span>
+            <span data-lang="en" class="active">Usage Data</span>
           </strong>
-          <span data-lang="zh" class="active"> - 匿名统计信息，帮助我们改进产品体验</span>
-          <span data-lang="en"> - Anonymous statistics to help us improve product experience</span>
+          <span data-lang="zh"> - 匿名统计信息，帮助我们改进产品体验</span>
+          <span data-lang="en" class="active"> - Anonymous statistics to help us improve product experience</span>
         </li>
         <li>
           <strong>
-            <span data-lang="zh" class="active">崩溃报告</span>
-            <span data-lang="en">Crash Reports</span>
+            <span data-lang="zh">崩溃报告</span>
+            <span data-lang="en" class="active">Crash Reports</span>
           </strong>
-          <span data-lang="zh" class="active"> - 用于定位和修复技术问题</span>
-          <span data-lang="en"> - Used to identify and fix technical issues</span>
+          <span data-lang="zh"> - 用于定位和修复技术问题</span>
+          <span data-lang="en" class="active"> - Used to identify and fix technical issues</span>
         </li>
         <li>
           <strong>
-            <span data-lang="zh" class="active">订阅信息</span>
-            <span data-lang="en">Subscription Information</span>
+            <span data-lang="zh">订阅信息</span>
+            <span data-lang="en" class="active">Subscription Information</span>
           </strong>
-          <span data-lang="zh" class="active"> - 通过 Apple App Store 处理的购买记录</span>
-          <span data-lang="en"> - Purchase records handled through Apple App Store</span>
+          <span data-lang="zh"> - 通过 Apple App Store 处理的购买记录</span>
+          <span data-lang="en" class="active"> - Purchase records handled through Apple App Store</span>
         </li>
       </ul>
     </div>
 
     <div class="privacy-section">
       <h2>
-        <span data-lang="zh" class="active">终端内容隐私</span>
-        <span data-lang="en">Terminal Content Privacy</span>
+        <span data-lang="zh">终端内容隐私</span>
+        <span data-lang="en" class="active">Terminal Content Privacy</span>
       </h2>
       <p>
-        <span data-lang="zh" class="active">您的终端会话内容（包括命令、输出、文件内容等）仅用于与 AI 模型交互以完成任务。我们承诺：</span>
-        <span data-lang="en">Your terminal session content (including commands, output, file content, etc.) is only used to interact with AI models to complete tasks. We承诺:</span>
+        <span data-lang="zh">您的终端会话内容（包括命令、输出、文件内容等）仅用于与 AI 模型交互以完成任务。我们承诺：</span>
+        <span data-lang="en" class="active">Your terminal session content (including commands, output, file content, etc.) is only used to interact with AI models to complete tasks. We承诺:</span>
       </p>
       <ul>
         <li>
-          <span data-lang="zh" class="active">不会存储您的终端内容到我们的服务器</span>
-          <span data-lang="en">Will not store your terminal content on our servers</span>
+          <span data-lang="zh">不会存储您的终端内容到我们的服务器</span>
+          <span data-lang="en" class="active">Will not store your terminal content on our servers</span>
         </li>
         <li>
-          <span data-lang="zh" class="active">不会将您的代码或数据用于训练 AI 模型</span>
-          <span data-lang="en">Will not use your code or data to train AI models</span>
+          <span data-lang="zh">不会将您的代码或数据用于训练 AI 模型</span>
+          <span data-lang="en" class="active">Will not use your code or data to train AI models</span>
         </li>
         <li>
-          <span data-lang="zh" class="active">不会向第三方出售或共享您的终端内容</span>
-          <span data-lang="en">Will not sell or share your terminal content with third parties</span>
+          <span data-lang="zh">不会向第三方出售或共享您的终端内容</span>
+          <span data-lang="en" class="active">Will not sell or share your terminal content with third parties</span>
         </li>
       </ul>
     </div>
 
     <div class="privacy-section">
       <h2>
-        <span data-lang="zh" class="active">第三方服务</span>
-        <span data-lang="en">Third-Party Services</span>
+        <span data-lang="zh">第三方服务</span>
+        <span data-lang="en" class="active">Third-Party Services</span>
       </h2>
       <p>
-        <span data-lang="zh" class="active">为实现核心功能，我们使用以下第三方服务：</span>
-        <span data-lang="en">To enable core features, we use the following third-party services:</span>
+        <span data-lang="zh">为实现核心功能，我们使用以下第三方服务：</span>
+        <span data-lang="en" class="active">To enable core features, we use the following third-party services:</span>
       </p>
       <ul>
         <li>
           <strong>Anthropic API</strong>
-          <span data-lang="zh" class="active"> - 提供 Claude AI 模型服务，受 Anthropic 隐私政策约束</span>
-          <span data-lang="en"> - Provides Claude AI model services, subject to Anthropic's Privacy Policy</span>
+          <span data-lang="zh"> - 提供 Claude AI 模型服务，受 Anthropic 隐私政策约束</span>
+          <span data-lang="en" class="active"> - Provides Claude AI model services, subject to Anthropic's Privacy Policy</span>
         </li>
         <li>
           <strong>OpenAI API</strong>
-          <span data-lang="zh" class="active"> - 可选的 AI 模型服务，受 OpenAI 隐私政策约束</span>
-          <span data-lang="en"> - Optional AI model service, subject to OpenAI's Privacy Policy</span>
+          <span data-lang="zh"> - 可选的 AI 模型服务，受 OpenAI 隐私政策约束</span>
+          <span data-lang="en" class="active"> - Optional AI model service, subject to OpenAI's Privacy Policy</span>
         </li>
         <li>
           <strong>Apple App Store</strong>
-          <span data-lang="zh" class="active"> - 处理应用内购买和订阅，受 Apple 隐私政策约束</span>
-          <span data-lang="en"> - Handles in-app purchases and subscriptions, subject to Apple's Privacy Policy</span>
+          <span data-lang="zh"> - 处理应用内购买和订阅，受 Apple 隐私政策约束</span>
+          <span data-lang="en" class="active"> - Handles in-app purchases and subscriptions, subject to Apple's Privacy Policy</span>
         </li>
       </ul>
     </div>
 
     <div class="privacy-section">
       <h2>
-        <span data-lang="zh" class="active">数据安全</span>
-        <span data-lang="en">Data Security</span>
+        <span data-lang="zh">数据安全</span>
+        <span data-lang="en" class="active">Data Security</span>
       </h2>
       <p>
-        <span data-lang="zh" class="active">我们采用行业标准的安全措施保护您的数据：</span>
-        <span data-lang="en">We use industry-standard security measures to protect your data:</span>
+        <span data-lang="zh">我们采用行业标准的安全措施保护您的数据：</span>
+        <span data-lang="en" class="active">We use industry-standard security measures to protect your data:</span>
       </p>
       <ul>
         <li>
-          <span data-lang="zh" class="active">传输层加密（HTTPS/TLS）</span>
-          <span data-lang="en">Transport layer encryption (HTTPS/TLS)</span>
+          <span data-lang="zh">传输层加密（HTTPS/TLS）</span>
+          <span data-lang="en" class="active">Transport layer encryption (HTTPS/TLS)</span>
         </li>
         <li>
-          <span data-lang="zh" class="active">本地数据加密存储</span>
-          <span data-lang="en">Encrypted local data storage</span>
+          <span data-lang="zh">本地数据加密存储</span>
+          <span data-lang="en" class="active">Encrypted local data storage</span>
         </li>
         <li>
-          <span data-lang="zh" class="active">定期安全审计和更新</span>
-          <span data-lang="en">Regular security audits and updates</span>
+          <span data-lang="zh">定期安全审计和更新</span>
+          <span data-lang="en" class="active">Regular security audits and updates</span>
         </li>
       </ul>
     </div>
 
     <div class="privacy-section">
       <h2>
-        <span data-lang="zh" class="active">您的权利</span>
-        <span data-lang="en">Your Rights</span>
+        <span data-lang="zh">您的权利</span>
+        <span data-lang="en" class="active">Your Rights</span>
       </h2>
       <p>
-        <span data-lang="zh" class="active">根据 applicable 数据保护法规，您享有以下权利：</span>
-        <span data-lang="en">Under applicable data protection regulations, you have the following rights:</span>
+        <span data-lang="zh">根据 applicable 数据保护法规，您享有以下权利：</span>
+        <span data-lang="en" class="active">Under applicable data protection regulations, you have the following rights:</span>
       </p>
       <ul>
         <li>
-          <span data-lang="zh" class="active">访问您个人信息的权利</span>
-          <span data-lang="en">Right to access your personal information</span>
+          <span data-lang="zh">访问您个人信息的权利</span>
+          <span data-lang="en" class="active">Right to access your personal information</span>
         </li>
         <li>
-          <span data-lang="zh" class="active">更正不准确信息的权利</span>
-          <span data-lang="en">Right to correct inaccurate information</span>
+          <span data-lang="zh">更正不准确信息的权利</span>
+          <span data-lang="en" class="active">Right to correct inaccurate information</span>
         </li>
         <li>
-          <span data-lang="zh" class="active">删除个人信息的权利</span>
-          <span data-lang="en">Right to delete personal information</span>
+          <span data-lang="zh">删除个人信息的权利</span>
+          <span data-lang="en" class="active">Right to delete personal information</span>
         </li>
         <li>
-          <span data-lang="zh" class="active">撤回同意的权利</span>
-          <span data-lang="en">Right to withdraw consent</span>
+          <span data-lang="zh">撤回同意的权利</span>
+          <span data-lang="en" class="active">Right to withdraw consent</span>
         </li>
       </ul>
     </div>
 
     <div class="privacy-section">
       <h2>
-        <span data-lang="zh" class="active">儿童隐私</span>
-        <span data-lang="en">Children's Privacy</span>
+        <span data-lang="zh">儿童隐私</span>
+        <span data-lang="en" class="active">Children's Privacy</span>
       </h2>
       <p>
-        <span data-lang="zh" class="active">我们的服务不面向 13 岁以下的儿童。我们不会故意收集儿童的个人信息。如果我们发现收集了儿童的个人信息，我们会立即删除。</span>
-        <span data-lang="en">Our services are not directed to children under 13. We do not knowingly collect personal information from children. If we discover that we have collected personal information from a child, we will delete it immediately.</span>
+        <span data-lang="zh">我们的服务不面向 13 岁以下的儿童。我们不会故意收集儿童的个人信息。如果我们发现收集了儿童的个人信息，我们会立即删除。</span>
+        <span data-lang="en" class="active">Our services are not directed to children under 13. We do not knowingly collect personal information from children. If we discover that we have collected personal information from a child, we will delete it immediately.</span>
       </p>
     </div>
 
     <div class="privacy-section">
       <h2>
-        <span data-lang="zh" class="active">隐私政策变更</span>
-        <span data-lang="en">Changes to Privacy Policy</span>
+        <span data-lang="zh">隐私政策变更</span>
+        <span data-lang="en" class="active">Changes to Privacy Policy</span>
       </h2>
       <p>
-        <span data-lang="zh" class="active">我们可能会不时更新本隐私政策。更新后的政策将在应用内发布，重大变更我们会通过应用通知您。</span>
-        <span data-lang="en">We may update this Privacy Policy from time to time. Updated policies will be posted in the App, and we will notify you of material changes through the App.</span>
+        <span data-lang="zh">我们可能会不时更新本隐私政策。更新后的政策将在应用内发布，重大变更我们会通过应用通知您。</span>
+        <span data-lang="en" class="active">We may update this Privacy Policy from time to time. Updated policies will be posted in the App, and we will notify you of material changes through the App.</span>
       </p>
     </div>
 
     <div class="privacy-section">
       <h2>
-        <span data-lang="zh" class="active">联系我们</span>
-        <span data-lang="en">Contact Us</span>
+        <span data-lang="zh">联系我们</span>
+        <span data-lang="en" class="active">Contact Us</span>
       </h2>
       <p>
-        <span data-lang="zh" class="active">如有隐私相关问题或行使数据权利请求，请通过以下方式联系我们：</span>
-        <span data-lang="en">For privacy-related questions or data rights requests, please contact us at:</span>
+        <span data-lang="zh">如有隐私相关问题或行使数据权利请求，请通过以下方式联系我们：</span>
+        <span data-lang="en" class="active">For privacy-related questions or data rights requests, please contact us at:</span>
       </p>
       <p>
-        <span data-lang="zh" class="active">邮箱：lsl8315@gmail.com</span>
-        <span data-lang="en">Email: lsl8315@gmail.com</span>
+        <span data-lang="zh">邮箱：lsl8315@gmail.com</span>
+        <span data-lang="en" class="active">Email: lsl8315@gmail.com</span>
       </p>
     </div>
   </div>
@@ -1151,87 +1337,87 @@
     <a href="#" class="back-link" onclick="showPage('home'); return false;">
       ←
       <span class="inline-lang">
-        <span data-lang="zh" class="active">返回首页</span>
-        <span data-lang="en">Back to Home</span>
+        <span data-lang="zh">返回首页</span>
+        <span data-lang="en" class="active">Back to Home</span>
       </span>
     </a>
 
     <h1>
-      <span data-lang="zh" class="active">技术支持</span>
-      <span data-lang="en">Technical Support</span>
+      <span data-lang="zh">技术支持</span>
+      <span data-lang="en" class="active">Technical Support</span>
     </h1>
 
     <h2>
-      <span data-lang="zh" class="active">联系方式</span>
-      <span data-lang="en">Contact</span>
+      <span data-lang="zh">联系方式</span>
+      <span data-lang="en" class="active">Contact</span>
     </h2>
     <p>
-      <span data-lang="zh" class="active">如有技术问题或需要帮助，请通过以下方式联系我们：</span>
-      <span data-lang="en">For technical issues or assistance, please contact us through the following channels:</span>
+      <span data-lang="zh">如有技术问题或需要帮助，请通过以下方式联系我们：</span>
+      <span data-lang="en" class="active">For technical issues or assistance, please contact us through the following channels:</span>
     </p>
     <ul>
       <li>
-        <span data-lang="zh" class="active">邮箱：lsl8315@gmail.com</span>
-        <span data-lang="en">Email: lsl8315@gmail.com</span>
+        <span data-lang="zh">邮箱：lsl8315@gmail.com</span>
+        <span data-lang="en" class="active">Email: lsl8315@gmail.com</span>
       </li>
       <li>
-        <span data-lang="zh" class="active">GitHub Issues: </span>
-        <span data-lang="en">GitHub Issues: </span>
+        <span data-lang="zh">GitHub Issues: </span>
+        <span data-lang="en" class="active">GitHub Issues: </span>
         <a href="https://github.com/Heipiao/coterm-site/issues">github.com/Heipiao/coterm-site/issues</a>
       </li>
     </ul>
 
     <h2>
-      <span data-lang="zh" class="active">常见问题</span>
-      <span data-lang="en">FAQ</span>
+      <span data-lang="zh">常见问题</span>
+      <span data-lang="en" class="active">FAQ</span>
     </h2>
 
     <h3>
-      <span data-lang="zh" class="active">如何开始使用？</span>
-      <span data-lang="en">How to get started?</span>
+      <span data-lang="zh">如何开始使用？</span>
+      <span data-lang="en" class="active">How to get started?</span>
     </h3>
     <p>
-      <span data-lang="zh" class="active">下载并安装 CoTerm 应用，按照应用内指引完成配置即可开始使用。您需要准备一个 AI 服务的 API Key（如 Anthropic、OpenAI）。</span>
-      <span data-lang="en">Download and install the CoTerm app, then follow the in-app instructions to complete the setup. You'll need an AI service API Key (such as Anthropic, OpenAI).</span>
+      <span data-lang="zh">下载并安装 CoTerm 应用，按照应用内指引完成配置即可开始使用。您需要准备一个 AI 服务的 API Key（如 Anthropic、OpenAI）。</span>
+      <span data-lang="en" class="active">Download and install the CoTerm app, then follow the in-app instructions to complete the setup. You'll need an AI service API Key (such as Anthropic, OpenAI).</span>
     </p>
 
     <h3>
-      <span data-lang="zh" class="active">支持哪些平台？</span>
-      <span data-lang="en">Which platforms are supported?</span>
+      <span data-lang="zh">支持哪些平台？</span>
+      <span data-lang="en" class="active">Which platforms are supported?</span>
     </h3>
     <p>
-      <span data-lang="zh" class="active">CoTerm 支持 iOS、macOS、Windows 和 Linux 平台。移动端和桌面端可以同步使用。</span>
-      <span data-lang="en">CoTerm supports iOS, macOS, Windows, and Linux platforms. Mobile and desktop can be used synchronously.</span>
+      <span data-lang="zh">CoTerm 支持 iOS、macOS、Windows 和 Linux 平台。移动端和桌面端可以同步使用。</span>
+      <span data-lang="en" class="active">CoTerm supports iOS, macOS, Windows, and Linux platforms. Mobile and desktop can be used synchronously.</span>
     </p>
 
     <h3>
-      <span data-lang="zh" class="active">需要 API Key 吗？</span>
-      <span data-lang="en">Do I need an API key?</span>
+      <span data-lang="zh">需要 API Key 吗？</span>
+      <span data-lang="en" class="active">Do I need an API key?</span>
     </h3>
     <p>
-      <span data-lang="zh" class="active">是的，您需要配置自己的 AI 服务 API Key 来使用 AI 功能。我们支持 Anthropic（Claude）、OpenAI（GPT-4）等多个服务商。</span>
-      <span data-lang="en">Yes, you need to configure your own AI service API Key to use AI features. We support multiple providers including Anthropic (Claude), OpenAI (GPT-4), etc.</span>
+      <span data-lang="zh">是的，您需要配置自己的 AI 服务 API Key 来使用 AI 功能。我们支持 Anthropic（Claude）、OpenAI（GPT-4）等多个服务商。</span>
+      <span data-lang="en" class="active">Yes, you need to configure your own AI service API Key to use AI features. We support multiple providers including Anthropic (Claude), OpenAI (GPT-4), etc.</span>
     </p>
 
     <h3>
-      <span data-lang="zh" class="active">Pro 订阅包含什么？</span>
-      <span data-lang="en">What does Pro subscription include?</span>
+      <span data-lang="zh">Pro 订阅包含什么？</span>
+      <span data-lang="en" class="active">What does Pro subscription include?</span>
     </h3>
     <p>
-      <span data-lang="zh" class="active">Pro 订阅提供无限 AI 会话数量、无限 Agent 执行时间、多会话工作区管理等高级功能。订阅可通过 App Store 购买，支持月付或年付。</span>
-      <span data-lang="en">Pro subscription provides unlimited AI sessions, unlimited Agent execution time, multi-session workspace management and other advanced features. Subscriptions are available through the App Store with monthly or annual billing.</span>
+      <span data-lang="zh">Pro 订阅提供无限 AI 会话数量、无限 Agent 执行时间、多会话工作区管理等高级功能。订阅可通过 App Store 购买，支持月付或年付。</span>
+      <span data-lang="en" class="active">Pro subscription provides unlimited AI sessions, unlimited Agent execution time, multi-session workspace management and other advanced features. Subscriptions are available through the App Store with monthly or annual billing.</span>
     </p>
 
     <h2>
-      <span data-lang="zh" class="active">文档</span>
-      <span data-lang="en">Documentation</span>
+      <span data-lang="zh">文档</span>
+      <span data-lang="en" class="active">Documentation</span>
     </h2>
     <p>
-      <span data-lang="zh" class="active">更多使用指南和技术文档，请访问我们的 </span>
-      <span data-lang="en">For more usage guides and technical documentation, please visit our </span>
+      <span data-lang="zh">更多使用指南和技术文档，请访问我们的 </span>
+      <span data-lang="en" class="active">For more usage guides and technical documentation, please visit our </span>
       <a href="https://github.com/Heipiao/coterm-site">GitHub 仓库</a>
-      <span data-lang="zh" class="active">。</span>
-      <span data-lang="en"> repository.</span>
+      <span data-lang="zh">。</span>
+      <span data-lang="en" class="active"> repository.</span>
     </p>
   </div>
 
@@ -1240,27 +1426,27 @@
     <div class="footer-inner">
       <div class="footer-copy">
         <span class="inline-lang">
-          <span data-lang="zh" class="active">© 2026 CoTerm. All rights reserved.</span>
-          <span data-lang="en">© 2026 CoTerm. All rights reserved.</span>
+          <span data-lang="zh">© 2026 CoTerm. All rights reserved.</span>
+          <span data-lang="en" class="active">© 2026 CoTerm. All rights reserved.</span>
         </span>
       </div>
       <div class="footer-links">
         <a href="#" onclick="showPage('privacy'); return false;">
           <span class="inline-lang">
-            <span data-lang="zh" class="active">隐私政策</span>
-            <span data-lang="en">Privacy Policy</span>
+            <span data-lang="zh">隐私政策</span>
+            <span data-lang="en" class="active">Privacy Policy</span>
           </span>
         </a>
         <a href="#" onclick="showPage('support'); return false;">
           <span class="inline-lang">
-            <span data-lang="zh" class="active">技术支持</span>
-            <span data-lang="en">Support</span>
+            <span data-lang="zh">技术支持</span>
+            <span data-lang="en" class="active">Support</span>
           </span>
         </a>
         <a href="https://github.com/Heipiao/coterm-site">
           <span class="inline-lang">
-            <span data-lang="zh" class="active">GitHub</span>
-            <span data-lang="en">GitHub</span>
+            <span data-lang="zh">GitHub</span>
+            <span data-lang="en" class="active">GitHub</span>
           </span>
         </a>
       </div>
@@ -1304,7 +1490,7 @@
     }
 
     // Initialize
-    setLang('zh');
+    setLang('en');
   </script>
 </body>
 </html>
